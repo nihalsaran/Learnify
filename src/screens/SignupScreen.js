@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity, Alert } from 'react-native';
 import firebase from '@react-native-firebase/app';
 import firestore from '@react-native-firebase/firestore';
 import Dropdown1 from './dropdown1';
@@ -26,12 +26,12 @@ const [name, setName] = useState('');
 
   const handleSignup = async () => {
     if (!email || !password || !confirmPassword) {
-      console.log('Please fill in all fields!');
+        Alert.alert('Please fill all the fields!');
       return;
     }
   
     if (password !== confirmPassword) {
-      console.log('Passwords do not match!');
+        Alert.alert('Password do not match!');
       return;
     }
   
@@ -46,10 +46,10 @@ const [name, setName] = useState('');
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       });
   
-      console.log('Signed up successfully!');
+      Alert.alert('Success', 'Signed up successfully!');
       // Navigate to another screen
     } catch (error) {
-      console.error('Signup error:', error);
+        Alert.alert('Error', 'Signup error. Please try again later.');
     }
 
 
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
   },
   title: {
     fontSize: 24,
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
+    width: '100%',
     backgroundColor: '#f5f5f5',
     paddingHorizontal: 10,
     marginBottom: 10,
