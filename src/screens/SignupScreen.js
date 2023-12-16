@@ -6,12 +6,20 @@ import Dropdown1 from './dropdown1';
 import Dropdown2 from './dropdown2';
 import Dropdown3 from './dropdown3';
 import { useNavigation } from '@react-navigation/native';
+import { Card } from '@ant-design/react-native';
 
 
 
 
 
 const SignupScreen = () => {
+    const defaultProps = {
+        image:
+          'https://assets.api.uizard.io/api/cdn/stream/ca5cacf8-41ff-4b18-9fd2-ffe4b1ade450.png',
+      };
+    
+
+    
     const navigation = useNavigation();
 
   const handleLoginClick = () => {
@@ -61,6 +69,7 @@ const [name, setName] = useState('');
 
   return (
     <View style={styles.container}>
+      
       <Text style={styles.title}>Sign Up</Text>
       <TextInput
         style={styles.input}
@@ -96,9 +105,10 @@ const [name, setName] = useState('');
   value={name}
   onChangeText={setName}
 />
-      <Dropdown1 />
-      <Dropdown2 />
-      <Dropdown3 />
+      
+        <Dropdown2 />
+      
+      
 
       <Button title="Sign Up" onPress={handleSignup} />
       <Text style={styles.linkText}>Already have an account?</Text>
@@ -118,12 +128,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   title: {
+    top: 200,
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
   },
   input: {
-    height: 40,
+    height: 50,
+    top: 200,
     width: '100%',
     backgroundColor: '#f5f5f5',
     paddingHorizontal: 10,

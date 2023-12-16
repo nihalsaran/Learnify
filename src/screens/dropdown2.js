@@ -1,75 +1,128 @@
 import React, { useState } from 'react';
-  import { StyleSheet } from 'react-native';
-  import { Dropdown } from 'react-native-element-dropdown';
-  import AntDesign from 'react-native-vector-icons/AntDesign';
-  
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import ModalDropdown from 'react-native-modal-dropdown';
+import facultiesData from '/Users/nihalsarandasduggirala/Desktop/LearnDEI/Learnify/src/screens/faculties.json';
 
-  const data2 = [
-    { label: 'Item 1', value: '1' },
-    { label: 'Item 2', value: '2' },
-    { label: 'Item 3', value: '3' },
-    { label: 'Item 4', value: '4' },
-    { label: 'Item 5', value: '5' },
-  ];
 
- 
+const App = () => {
+  const [selectedFaculty, setSelectedFaculty] = useState('Select a faculty');
+  const [selectedSemester, setSelectedSemester] = useState('Select a semester');
+  const [selectedCourse, setSelectedCourse] = useState('Select a course');
 
-const DropdownComponent = () => {
-    const [value, setValue] = useState(null);
 
-    return (
-         
-            <Dropdown
-                style={styles.dropdown}
-                placeholderStyle={styles.placeholderStyle}
-                selectedTextStyle={styles.selectedTextStyle}
-                inputSearchStyle={styles.inputSearchStyle}
-                iconStyle={styles.iconStyle}
-                data={data2}
-                search
-                maxHeight={300}
-                labelField="label"
-                valueField="value"
-                placeholder="Select item"
-                searchPlaceholder="Search..."
-                value={value}
-                onChange={item => {
-                    setValue(item.value);
-                }}
-                renderLeftIcon={() => (
-                    <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
-                )}
-            />
-           
-        
-    );
+  const { faculties } = facultiesData;
+
+  const handleFacultySelect = (index, value) => {
+    setSelectedFaculty(value);
+    setSelectedSemester('Select a semester'); // Reset semester on faculty change
+    setSelectedCourse('Select a course'); // Reset course on faculty change
+  };
+
+  const handleSemesterSelect = (index, value) => {
+    setSelectedSemester(value);
+    setSelectedCourse('Select a course'); // Reset course on semester change
+  };
+
+  const handleCourseSelect = (index, value) => {
+    setSelectedCourse(value);
+  };
+
+  const selectedFacultyData = faculties[selectedFaculty] || {};
+  const semesters = selectedFacultyData.semesters || [];
+  const courses = selectedFacultyData.courses || {};
+
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
+      <ModalDropdown
+        options={Object.keys(faculties)}
+        defaultValue={selectedFaculty}
+        onSelect={handleFacultySelect}
+        style={styles.facultyDropdown}
+        textStyle={styles.dropdownText}
+        dropdownStyle={styles.dropdownDropdown}
+        dropdownTextStyle={styles.dropdownDropdownText}
+        defaultIndex={0}
+      />
+
+      {selectedFaculty !== 'Select a faculty' && (
+        <ModalDropdown
+        options={selectedFacultyData.semesters || []}
+          defaultValue={selectedSemester}
+          onSelect={handleSemesterSelect}
+          style={styles.semesterDropdown}
+          textStyle={styles.dropdownText}
+          dropdownStyle={styles.dropdownDropdown}
+          dropdownTextStyle={styles.dropdownDropdownText}
+          defaultIndex={0}
+        />
+      )}
+
+      {selectedSemester !== 'Select a semester' && (
+        <ModalDropdown
+        options={courses[selectedSemester] || []}
+          defaultValue={selectedCourse}
+          onSelect={handleCourseSelect}
+          style={styles.courseDropdown}
+          textStyle={styles.dropdownText}
+          dropdownStyle={styles.dropdownDropdown}
+          dropdownTextStyle={styles.dropdownDropdownText}
+          defaultIndex={0}
+        />
+      )}
+
+      <Text>Selected Faculty: {selectedFaculty}</Text>
+      <Text>Selected Semester: {selectedSemester}</Text>
+      <Text>Selected Course: {selectedCourse}</Text>
+    </View>
+    </ScrollView>
+  );
 };
 
-  export default DropdownComponent;
+const styles = StyleSheet.create({
+  
 
-  const styles = StyleSheet.create({
-    dropdown: {
-      margin: 16,
-      height: 50,
-      width: 300,
-      borderBottomColor: 'gray',
-      borderBottomWidth: 0.5,
-    },
-    icon: {
-      marginRight: 5,
-    },
-    placeholderStyle: {
-      fontSize: 16,
-    },
-    selectedTextStyle: {
-      fontSize: 16,
-    },
-    iconStyle: {
-      width: 20,
-      height: 20,
-    },
-    inputSearchStyle: {
-      height: 40,
-      fontSize: 16,
-    },
-  });
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  facultyDropdown: {
+    // Faculty dropdown styles
+    width: 370,
+    marginTop: 150,
+    borderWidth: 1,
+    borderColor: 'blue',
+    padding: 10,
+  },
+  semesterDropdown: {
+    // Semester dropdown styles
+    width: 370,
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: 'green',
+    padding: 10,
+  },
+  courseDropdown: {
+    // Course dropdown styles
+    width: 370,
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: 'red',
+    padding: 10,
+  },
+  dropdownText: {
+    fontSize: 18,
+  },
+  dropdownDropdown: {
+    width: 370,
+    maxHeight: 150,
+    borderColor: 'gray',
+    borderWidth: 1,
+  },
+  dropdownDropdownText: {
+    fontSize: 18,
+  },
+});
+
+export default App;

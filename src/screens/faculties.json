@@ -1,0 +1,28 @@
+{
+    "faculties":{
+        "Faculty of Engineering": {
+            "semesters": ["Sem1", "Sem2", "Sem3", "Sem4", "Sem6", "Sem7", "Sem8"],
+            "courses": {
+              "Sem1": ["Course1", "Course2", "Course3", "Course4"],
+              "Sem2": ["Course4", "Course5", "Course6"],
+                "Sem3": ["Course7", "Course8", "Course9"],
+                "Sem4": ["Course10", "Course11", "Course12"],
+                "Sem5": ["Course13", "Course14", "Course15"],
+                "Sem6": ["Course16", "Course17", "Course18"],
+                "Sem7": ["Course19", "Course20", "Course21"],
+                "Sem8": ["Course22", "Course23", "Course24"]
+    }
+},
+"Faculty of Science": {
+    "semesters": ["Sem1", "Sem2", "Sem3", "Sem4", "Sem5"],
+    "courses": {
+      "Sem1": ["Course1", "Course2", "Course3", "Course4"],
+      "Sem2": ["Course4", "Course5", "Course6"],
+        "Sem3": ["Course7", "Course8", "Course9"],
+        "Sem4": ["Course10", "Course11", "Course12"],
+        "Sem5": ["Course13", "Course14", "Course15"],
+        "Sem6": ["Course16", "Course17", "Course18"]
+    }
+  }
+}
+}
