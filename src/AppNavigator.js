@@ -6,6 +6,9 @@ import Splash from './screens/Splash';
 import Login from './screens/Login';
 import Home from './screens/Home';
 import SignupScreen from './screens/SignupScreen';
+import Profile from './screens/Profile';
+import Materialpage from './screens/Materialpage';
+
 
 
 
@@ -41,6 +44,18 @@ const AppNavigator = () => {
           component={Home} 
           options={{headerShown: false}}
           />
+          <Stack.Screen 
+          name="Profile" 
+          component={Profile} 
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="Materialpage" 
+          component={Materialpage} 
+          options={{headerShown: false}}
+          />
+          
+          
         
          
             </Stack.Navigator>
