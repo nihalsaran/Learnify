@@ -9,7 +9,6 @@ import SignupScreen from './screens/SignupScreen';
 
 
 
-
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -42,6 +41,7 @@ const AppNavigator = () => {
           component={Home} 
           options={{headerShown: false}}
           />
+        
          
             </Stack.Navigator>
         </NavigationContainer>

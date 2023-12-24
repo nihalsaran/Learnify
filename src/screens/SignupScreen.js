@@ -2,25 +2,26 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity, Alert } from 'react-native';
 import firebase from '@react-native-firebase/app';
 import firestore from '@react-native-firebase/firestore';
-import Dropdown1 from './dropdown1';
-import Dropdown2 from './dropdown2';
-import Dropdown3 from './dropdown3';
+
 import { useNavigation } from '@react-navigation/native';
-import { Card } from '@ant-design/react-native';
+
+import ModalDropdown from 'react-native-modal-dropdown';
+import facultiesData from '/Users/nihalsarandasduggirala/Desktop/LearnDEI/Learnify/src/screens/faculties.json';
+
 
 
 
 
 
 const SignupScreen = () => {
-    const defaultProps = {
-        image:
-          'https://assets.api.uizard.io/api/cdn/stream/ca5cacf8-41ff-4b18-9fd2-ffe4b1ade450.png',
-      };
-    
+  const defaultProps = {
+    image:
+      'https://assets.api.uizard.io/api/cdn/stream/ca5cacf8-41ff-4b18-9fd2-ffe4b1ade450.png',
+  };
 
-    
-    const navigation = useNavigation();
+
+
+  const navigation = useNavigation();
 
   const handleLoginClick = () => {
     // Navigate to the login page
@@ -30,46 +31,82 @@ const SignupScreen = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [rollNumber, setRollNumber] = useState('');
-const [name, setName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [name, setName] = useState('');
+  const [selectedFaculty, setSelectedFaculty] = useState('Select a faculty');
+  const [selectedSemester, setSelectedSemester] = useState('Select a semester');
+  const [selectedCourse, setSelectedCourse] = useState('Select a course');
+
+  const { faculties } = facultiesData;
+
+  const handleFacultySelect = (index, value) => {
+    setSelectedFaculty(value);
+    setSelectedSemester('Select a semester'); // Reset semester on faculty change
+    setSelectedCourse('Select a course'); // Reset course on faculty change
+  };
+
+  const handleSemesterSelect = (index, value) => {
+    setSelectedSemester(value);
+    setSelectedCourse('Select a course'); // Reset course on semester change
+  };
+
+  const handleCourseSelect = (index, value) => {
+    setSelectedCourse(value);
+  };
+
+  const selectedFacultyData = faculties[selectedFaculty] || {};
+  const semesters = selectedFacultyData.semesters || [];
+  const courses = selectedFacultyData.courses || {};
+
 
   const handleSignup = async () => {
     if (!email || !password || !confirmPassword) {
-        Alert.alert('Please fill all the fields!');
+      Alert.alert('Please fill all the fields!');
       return;
     }
-  
+
     if (password !== confirmPassword) {
-        Alert.alert('Password do not match!');
+      Alert.alert('Password do not match!');
       return;
     }
-  
+
     try {
       const auth = firebase.auth();
       const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-  
+
       // Add user data to Firestore (optional)
       await firestore().collection('users').doc(userCredential.user.uid).set({
-        email,rollNumber,
-        name,password,Dropdown1,Dropdown2,Dropdown3,
+        email,
+        rollNumber,
+        name,
+        password, 
+        phoneNumber, 
+        selectedFaculty, // Save selectedFaculty separately
+        selectedSemester, // Save selectedSemester separately
+        selectedCourse, // Save selectedCourse separately
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       });
-  
+
       Alert.alert('Success', 'Signed up successfully!');
       // Navigate to another screen
+
+      // Navigate to EmailOtpVerification screen with email as a prop
+      navigation.navigate('Home');
     } catch (error) {
-        Alert.alert('Error', 'Signup error. Please try again later.');
+      console.error('Signup Error:', error);
+      Alert.alert('Error', 'Signup error. Please try again later.');
     }
 
 
 
-    
+
   };
 
-  
+
 
   return (
     <View style={styles.container}>
-      
+
       <Text style={styles.title}>Sign Up</Text>
       <TextInput
         style={styles.input}
@@ -93,28 +130,75 @@ const [name, setName] = useState('');
         secureTextEntry
       />
       <TextInput
-  style={styles.input}
-  placeholder="Roll Number"
-  value={rollNumber}
-  onChangeText={setRollNumber}
-  keyboardType="number-pad"
-/>
-<TextInput
-  style={styles.input}
-  placeholder="Full Name"
-  value={name}
-  onChangeText={setName}
-/>
-      
-        <Dropdown2 />
-      
-      
+        style={styles.input}
+        placeholder="Roll Number"
+        value={rollNumber}
+        onChangeText={setRollNumber}
+        keyboardType="number-pad"
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Phone Number"
+        value={phoneNumber}
+        onChangeText={setPhoneNumber}
+        keyboardType="number-pad"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Full Name"
+        value={name}
+        onChangeText={setName}
+      />
+
+<ModalDropdown
+        options={Object.keys(faculties)}
+        defaultValue={selectedFaculty}
+        onSelect={handleFacultySelect}
+        style={styles.facultyDropdown}
+        textStyle={styles.dropdownText}
+        dropdownStyle={styles.dropdownDropdown}
+        dropdownTextStyle={styles.dropdownDropdownText}
+        defaultIndex={0}
+      />
+
+      {selectedFaculty !== 'Select a faculty' && (
+        <ModalDropdown
+        options={selectedFacultyData.semesters || []}
+          defaultValue={selectedSemester}
+          onSelect={handleSemesterSelect}
+          style={styles.semesterDropdown}
+          textStyle={styles.dropdownText}
+          dropdownStyle={styles.dropdownDropdown}
+          dropdownTextStyle={styles.dropdownDropdownText}
+          defaultIndex={0}
+        />
+      )}
+
+      {selectedSemester !== 'Select a semester' && (
+        <ModalDropdown
+        options={courses[selectedSemester] || []}
+          defaultValue={selectedCourse}
+          onSelect={handleCourseSelect}
+          style={styles.courseDropdown}
+          textStyle={styles.dropdownText}
+          dropdownStyle={styles.dropdownDropdown}
+          dropdownTextStyle={styles.dropdownDropdownText}
+          defaultIndex={0}
+        />
+      )}
+
+      <Text>Selected Faculty: {selectedFaculty}</Text>
+      <Text>Selected Semester: {selectedSemester}</Text>
+      <Text>Selected Course: {selectedCourse}</Text>
+
+
 
       <Button title="Sign Up" onPress={handleSignup} />
       <Text style={styles.linkText}>Already have an account?</Text>
       <TouchableOpacity style={styles.link} onPress={handleLoginClick}>
-         
-        <Text>Log in</Text>   
+
+        <Text>Log in</Text>
       </TouchableOpacity>
     </View>
   );
@@ -126,16 +210,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
+    top: -50,
   },
   title: {
-    top: 200,
+    top: 160,
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
   },
   input: {
     height: 50,
-    top: 200,
+    top: 160,
     width: '100%',
     backgroundColor: '#f5f5f5',
     paddingHorizontal: 10,
@@ -146,6 +231,45 @@ const styles = StyleSheet.create({
   },
   linkText: {
     color: '#333',
+  },
+
+  facultyDropdown: {
+    // Faculty dropdown styles
+    width: 370,
+    marginTop: 200,
+    borderWidth: 1,
+    borderColor: 'blue',
+    padding: 10,
+  },
+
+  semesterDropdown: {
+    // Semester dropdown styles
+    width: 370,
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: 'green',
+    padding: 10,
+  },
+
+  courseDropdown: {
+    // Course dropdown styles
+    width: 370,
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: 'red',
+    padding: 10,
+  },
+  dropdownText: {
+    fontSize: 18,
+  },
+  dropdownDropdown: {
+    width: 370,
+    maxHeight: 150,
+    borderColor: 'gray',
+    borderWidth: 1,
+  },
+  dropdownDropdownText: {
+    fontSize: 18,
   },
 });
 

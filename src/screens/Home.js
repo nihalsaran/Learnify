@@ -1,12 +1,19 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View } from 'react-native';
 
-const Home = () => {
+const styles = {
+  screen: {
+    backgroundColor: '#ffffff',
+    flex: 1,
+  },
+};
+
+const Home = (props) => {
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.screen}>
+      {props.children}
     </View>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
