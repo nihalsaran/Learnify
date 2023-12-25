@@ -1,13 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Welcome from './screens/Welcome';
-import Splash from './screens/Splash';
-import Login from './screens/Login';
-import Home from './screens/Home';
-import SignupScreen from './screens/SignupScreen';
-import Profile from './screens/Profile';
+
 import Materialpage from './screens/Materialpage';
+import Facultylist from './screens/Facultylist';
 
 
 
@@ -16,9 +12,40 @@ const Stack = createStackNavigator();
 
 const AppNavigator = () => {
     return (
-        <NavigationContainer>
-            <Stack.Navigator>
-               
+       <NavigationContainer>
+          <Stack.Navigator>
+             
+          <Stack.Screen 
+          name="Materialpage" 
+          component={Materialpage} 
+          options={{headerShown: false}}
+          /> 
+           <Stack.Screen 
+          name="Facultylist" 
+          component={Facultylist} 
+          options={{headerShown: false}}
+          />
+          
+          
+          
+        
+         
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+};
+
+export default AppNavigator;
+/* 
+
+
+import Welcome from './screens/Welcome';
+import Splash from './screens/Splash';
+import Login from './screens/Login';
+import Home from './screens/Home';
+import SignupScreen from './screens/SignupScreen';
+import Profile from './screens/Profile';
+  
                 <Stack.Screen 
           name="Splash" 
           component={Splash} 
@@ -49,18 +76,4 @@ const AppNavigator = () => {
           component={Profile} 
           options={{headerShown: false}}
           />
-          <Stack.Screen 
-          name="Materialpage" 
-          component={Materialpage} 
-          options={{headerShown: false}}
-          />
-          
-          
-        
-         
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
-};
-
-export default AppNavigator;
+*/

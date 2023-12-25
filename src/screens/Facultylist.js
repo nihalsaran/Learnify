@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Facultypage = () => {
+const Facultylist = () => {
   return (
     <View>
       <Text>Facultypage</Text>
@@ -9,4 +9,6 @@ const Facultypage = () => {
   )
 }
 
-export default Facultypage
+export default Facultylist
+
+// need to add this in AppNavigator.js

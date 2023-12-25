@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     lineHeight: 38,
     position: 'absolute',
     bottom: 10,
-    left: 100,
+    left: 60,
     top: 50,
   },
   button: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
 
 const defaultProps = {
   image: 'https://images.unsplash.com/photo-1558168674-2505c71112eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDUzMDJ8MHwxfHNlYXJjaHwxfHxGYWN1bHR5fGVufDF8fHx8MTcwMzQwNzY0M3ww&ixlib=rb-4.0.3&q=80&w=1080',
-  text: '',
+  text: '   SUBJECT\n MATERIALS',
   label: 'View',
 };
 

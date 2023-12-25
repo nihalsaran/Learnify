@@ -4,10 +4,10 @@ import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   imageContainer: {
-    top: 110,
+    top: 79,
     left: 65,
-    width: 300,
-    height: 200,
+    width: 310,
+    height: 130,
     borderRadius: 12,
     overflow: 'hidden',
   },
@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
     lineHeight: 38,
     position: 'absolute',
     bottom: 10,
-    left: 100,
-    top: 50,
+    left: 60,
+    top: 20,
   },
   button: {
     position: 'absolute', // Ensure the button is positioned absolutely
-    top: 125, // Adjust top position as needed based on your layout
+    top: 80, // Adjust top position as needed based on your layout
     left: 90, // Adjust left position as needed based on your layout
     width: 120,
     height: 36,
@@ -43,15 +43,15 @@ const styles = StyleSheet.create({
 });
 
 const defaultProps = {
-  image: 'https://images.unsplash.com/photo-1558168674-2505c71112eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDUzMDJ8MHwxfHNlYXJjaHwxfHxGYWN1bHR5fGVufDF8fHx8MTcwMzQwNzY0M3ww&ixlib=rb-4.0.3&q=80&w=1080',
-  text: 'Faculty',
+  image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDUzMDJ8MHwxfHNlYXJjaHwzfHxzdWJqZWN0c3xlbnwxfHx8fDE3MDM0NDgxMDl8MA&ixlib=rb-4.0.3&q=80&w=1080',
+  text: '   SUBJECT1',
   label: 'View',
 };
 
-const Homepagecomp2 = ({ image, text, label }) => {
-    const navigation = useNavigation();
+const Subject4 = ({ image, text, label }) => {
+  const navigation = useNavigation();
   const handleButtonClick = () => {
-    navigation.navigate('Facultylist'); // Replace 'MaterialPage' with your actual screen name
+    navigation.navigate('Materialpage'); // Replace 'MaterialPage' with your actual screen name
   };
   return (
     <View style={styles.imageContainer}>
@@ -75,4 +75,4 @@ const Homepagecomp2 = ({ image, text, label }) => {
   );
 };
 
-export default Homepagecomp2;
+export default Subject4;
