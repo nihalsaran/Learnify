@@ -1,6 +1,7 @@
 {
     "faculties":{
         "Faculty of Engineering": {
+          "subfaculties": ["Computer Science", "Electronics", "Mechanical", "Civil"],
             "semesters": ["Sem1", "Sem2", "Sem3", "Sem4", "Sem6", "Sem7", "Sem8"],
             "courses": {
               "Sem1": ["Course1", "Course2", "Course3", "Course4"],
