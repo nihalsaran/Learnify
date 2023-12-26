@@ -7,6 +7,7 @@ import App from './App';
 import {name as appName} from './app.json';
 import { firebase } from '@react-native-firebase/app';
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyDOE_y-sHVlFI1VqRIZ0ehXoxD7JbWkuSg",
     authDomain: "learnify-1.firebaseapp.com",
@@ -18,5 +19,6 @@ const firebaseConfig = {
 
 };
 firebase.initializeApp(firebaseConfig);
+
 
 AppRegistry.registerComponent(appName, () => App);

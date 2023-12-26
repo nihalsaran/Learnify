@@ -649,6 +649,9 @@ PODS:
     - FirebaseAuth (~> 10.19.0)
   - Firebase/CoreOnly (10.19.0):
     - FirebaseCore (= 10.19.0)
+  - Firebase/Database (10.19.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 10.19.0)
   - Firebase/Firestore (10.19.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 10.19.0)
@@ -668,6 +671,11 @@ PODS:
     - FirebaseCore (~> 10.0)
   - FirebaseCoreInternal (10.19.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
+  - FirebaseDatabase (10.19.0):
+    - FirebaseAppCheckInterop (~> 10.17)
+    - FirebaseCore (~> 10.0)
+    - FirebaseSharedSwift (~> 10.0)
+    - leveldb-library (~> 1.22)
   - FirebaseFirestore (10.19.0):
     - FirebaseCore (~> 10.0)
     - FirebaseCoreExtension (~> 10.0)
@@ -1828,11 +1836,17 @@ PODS:
     - Firebase/Auth (= 10.19.0)
     - React-Core
     - RNFBApp
+  - RNFBDatabase (18.7.3):
+    - Firebase/Database (= 10.19.0)
+    - React-Core
+    - RNFBApp
   - RNFBFirestore (18.7.3):
     - Firebase/Firestore (= 10.19.0)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - React-Core
     - RNFBApp
+  - RNFS (2.20.0):
+    - React-Core
   - RNGestureHandler (2.14.0):
     - glog
     - RCT-Folly (= 2022.05.16.00)
@@ -1905,7 +1919,9 @@ DEPENDENCIES:
   - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
+  - "RNFBDatabase (from `../node_modules/@react-native-firebase/database`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
+  - RNFS (from `../node_modules/react-native-fs`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -1922,6 +1938,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreExtension
     - FirebaseCoreInternal
+    - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseFirestoreInternal
     - FirebaseSharedSwift
@@ -2041,8 +2058,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBAuth:
     :path: "../node_modules/@react-native-firebase/auth"
+  RNFBDatabase:
+    :path: "../node_modules/@react-native-firebase/database"
   RNFBFirestore:
     :path: "../node_modules/@react-native-firebase/firestore"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNScreens:
@@ -2067,6 +2088,7 @@ SPEC CHECKSUMS:
   FirebaseCore: dc5c7badf99d47613c52b2e3a57a64cd187f8554
   FirebaseCoreExtension: c08d14c7b22e07994e876d837e6f58642f340087
   FirebaseCoreInternal: b444828ea7cfd594fca83046b95db98a2be4f290
+  FirebaseDatabase: 0bec4d2f36e8d957dac82433f60486c9ec0fc6c1
   FirebaseFirestore: 9b9b21120c1a0cb4f2789ffb7fbb9138f94c47eb
   FirebaseFirestoreInternal: a15405fb607dfd14edd568bba77028f4c7a69688
   FirebaseSharedSwift: f34eeb7d3ea87a34497629b6ca41657beadef76a
@@ -2127,14 +2149,16 @@ SPEC CHECKSUMS:
   RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
   RNFBApp: 5ee688b07ed0fa692a3a8fd07df6d6ae41e4c3a0
   RNFBAuth: a800af76ce0baed0c839307aa0aa0c2443dbbee6
+  RNFBDatabase: df1d78d79d5a6fe4c75de37534ef5943b187e573
   RNFBFirestore: d469f8331952970100a1015baebc2bb831a667a7
+  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
   RNGestureHandler: a426f2b9134a10ac56ff78593fb068541e68f0e7
   RNScreens: 2b73f5eb2ac5d94fbd61fa4be0bfebd345716825
   RNSVG: ba3e7232f45e34b7b47e74472386cf4e1a676d0a
   RNVectorIcons: ee070291bc6c7b4c880181b214534d4657ea1905
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  Yoga: 44003f970aa541b79dfdd59cf236fda41bd5890f
+  Yoga: 20d6a900dcc8d61d5e3b799bbf627cc34474a8c4
 
 PODFILE CHECKSUM: 6345f44bff4bd29abe0c4c2c07bb85dba4a1eb97
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.3

@@ -1,33 +1,23 @@
 import React from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
-  ImageContainer: {
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    borderRadius: 8,
-    zIndex: -1,
-    position: 'relative',
-    overflow: 'hidden', // Use overflow to achieve borderRadius in ImageBackground
+const defaultImage = 'https://images.unsplash.com/photo-1542435503-956c469947f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDUzMDJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwYmFja2dyb3VuZCUyMHxlbnwxfHx8fDE2OTUwMTg3NzV8MA&ixlib=rb-4.0.3&q=80&w=1080';
 
-  },
-});
-
-const defaultProps = {
-  image: 'https://images.unsplash.com/photo-1542435503-956c469947f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDUzMDJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwYmFja2dyb3VuZCUyMHxlbnwxfHx8fDE2OTUwMTg3NzV8MA&ixlib=rb-4.0.3&q=80&w=1080',
-}
-
-const Background = (props) => {
+const Background = ({ image = defaultImage }) => {
   return (
     <ImageBackground
-      style={{
-        ...styles.ImageContainer,
-      }}
-      source={{ uri: props.image ?? defaultProps.image }}
+      style={styles.imageContainer}
+      source={{ uri: image }}
     />
   );
 };
+
+const styles = StyleSheet.create({
+  imageContainer: {
+    flex: 1,
+    borderRadius: 8,
+    overflow: 'hidden', // Using overflow to achieve borderRadius in ImageBackground
+  },
+});
 
 export default Background;

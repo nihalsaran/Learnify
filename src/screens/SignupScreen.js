@@ -58,7 +58,7 @@ const SignupScreen = () => {
   };
 
   const handleSubbranchSelect = (index, value) => {
-    setSelectedCourse(value);
+    setSelectedSubbranch(value);
   };
 
   const selectedFacultyData = faculties[selectedFaculty] || {};

@@ -1,8 +1,15 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import Materialpage from './screens/Materialpage';
+import Home from './screens/Home';
+import Facultylist from './screens/Facultylist';
 import SignupScreen from './screens/SignupScreen';
+import Welcome from './screens/Welcome';
+import Splash from './screens/Splash';
+import Login from './screens/Login';
+
+import Profile from './screens/Profile';
 
 
 
@@ -14,38 +21,8 @@ const AppNavigator = () => {
     return (
        <NavigationContainer>
           <Stack.Navigator>
-             
-          
-           
+
           <Stack.Screen 
-          name="Signup" 
-          component={SignupScreen} 
-          options={{headerShown: false}}
-          />
-          
-          
-          
-        
-         
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
-};
-
-export default AppNavigator;
-/* 
-
-
-import Welcome from './screens/Welcome';
-import Splash from './screens/Splash';
-import Login from './screens/Login';
-import Home from './screens/Home';
-import Profile from './screens/Profile';
-import Materialpage from './screens/Materialpage';
-import Facultylist from './screens/Facultylist';
-
-  
-                <Stack.Screen 
           name="Splash" 
           component={Splash} 
           options={{headerShown: false}}
@@ -60,15 +37,21 @@ import Facultylist from './screens/Facultylist';
           component={Login} 
           options={{headerShown: false}}
           />
-          
           <Stack.Screen 
-          name="Home" 
-          component={Home} 
+          name="Signup" 
+          component={SignupScreen} 
           options={{headerShown: false}}
           />
+          
           <Stack.Screen 
           name="Profile" 
           component={Profile} 
+          options={{headerShown: false}}
+          />
+          
+           <Stack.Screen 
+          name="Facultylist" 
+          component={Facultylist} 
           options={{headerShown: false}}
           />
           <Stack.Screen 
@@ -76,14 +59,40 @@ import Facultylist from './screens/Facultylist';
           component={Materialpage} 
           options={{headerShown: false}}
           /> 
-           <Stack.Screen 
-          name="Facultylist" 
-          component={Facultylist} 
-          options={{headerShown: false}}
-          />
           <Stack.Screen 
-          name="Profile" 
-          component={Profile} 
+          name="Home" 
+          component={Home} 
           options={{headerShown: false}}
           />
-*/
+
+             
+          
+           
+          
+          
+          
+          
+        
+         
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+};
+
+export default AppNavigator;
+ 
+/*
+
+
+
+
+          
+
+          */
+
+
+
+
+
+  
+                

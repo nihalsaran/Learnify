@@ -1,63 +1,36 @@
+import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
-import Background from '../components/Materialpage/Background';
-import Footer from '../components/Homepage/Footer';
-import Subject1 from '../components/Materialpage/Subject1';
-import Subject2 from '../components/Materialpage/Subject2';
-import Subject3 from '../components/Materialpage/Subject3';
-import Subject4 from '../components/Materialpage/Subject4';
 
-const data = [
-  { id: '1', component: <Subject1 /> },
-];
+import Footer from '../components/Facultypage/Footer';
+import Subjects from '../components/Materialpage/Subjects';
+
+const Materialpage = () => {
+  return (
+    <ImageBackground
+      source={require('/Users/nihalsarandasduggirala/Desktop/LearnDEI/Learnify/src/components/Materialpage/background.jpeg')} // Replace with your image path
+      style={styles.backgroundImage}
+    >
+      <View style={styles.container}>
+        <Subjects />
+        <Footer />
+      </View>
+    </ImageBackground>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
-  //  position: 'relative', // Set the position to relative for zIndex to work
+    justifyContent: 'center',
+    alignItems: 'center',
+    // Add other styles as needed for your content layout
   },
-  content: {
+  backgroundImage: {
     flex: 1,
-    // Other styles for your content if needed
-  },
-  flatlistContainer: {
-    position: 'absolute', // Set the position to relative for zIndex to work
-    zIndex: 0, // Set a higher zIndex to bring it to the front
-    top: 10,
-    left: 0,
+    resizeMode: 'cover', // or 'contain' as per your preference
     width: '100%',
-    height: '100%', // Position it as per your requirement
-    // Other styles for the FlatList container
+    height: '100%',
   },
-  flatlistItem: {
-    paddingTop: 10,
-   
-  },
-  
 });
 
-const Home = (props) => {
-  return (
-    <View style={styles.container}>
-      <Background />
-      <View style={styles.content}>{props.children}</View>
-      
-
-      <View style={styles.flatlistContainer}>
-      <FlatList
-          data={data}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <View style={styles.flatlistItem}>{item.component}</View>
-          )}
-          contentContainerStyle={{ paddingBottom: 20 }} // Optional, adds bottom padding to the FlatList content
-        />
-        <Footer />
-      </View>
-      
-    </View>
-  );
-};
-
-export default Home;
+export default Materialpage;

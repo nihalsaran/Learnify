@@ -1,0 +1,53 @@
+[
+    {
+      "subjectName": "APPLIED CHEMISTRY",  
+      "selectedFaculty": "Engineering",        
+      "selectedSubfaculty": "Fulltime-Electrical",  
+      "selectedSemester": "ESem1",             
+      "selectedSubbranch": "Select a Subbranch",
+     
+      "subjectCode": "CHM181",
+      "credits": 3,
+      "description": "APPLIED CHEMISTRY"
+     
+    },
+    {
+        "subjectName": "APPLIED PHYSICS I",  
+        "selectedFaculty": "Engineering",        
+        "selectedSubfaculty": "Fulltime-Electrical",  
+        "selectedSemester": "ESem1",             
+        "selectedSubbranch": "Select a Subbranch",
+       
+        "subjectCode": "PHM181",
+        "credits": 3,
+        "description": "APPLIED CHEMISTRY"
+       
+      },
+      {
+        "subjectName": "GRAPHIC SCIENCE",  
+        "selectedFaculty": "Engineering",        
+        "selectedSubfaculty": "Fulltime-Electrical",  
+        "selectedSemester": "ESem1",             
+        "selectedSubbranch": "Select a Subbranch",
+       
+        "subjectCode": "MEM101",
+        "credits": 3,
+        "description": "APPLIED CHEMISTRY"
+       
+      },
+      {
+        "subjectName": "GRAPHIC SCIENCE",  
+        "selectedFaculty": "Engineering",        
+        "selectedSubfaculty": "Fulltime-Electrical",  
+        "selectedSemester": "ESem2",             
+        "selectedSubbranch": "Select a Subbranch",
+       
+        "subjectCode": "MEM101",
+        "credits": 3,
+        "description": "APPLIED CHEMISTRY"
+       
+      }
+
+
+  ]
+  
