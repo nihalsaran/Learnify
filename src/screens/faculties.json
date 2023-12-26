@@ -1,18 +1,24 @@
 {
     "faculties":{
         "Faculty of Engineering": {
-          "subfaculties": ["Computer Science", "Electronics", "Mechanical", "Civil"],
-            "semesters": ["Sem1", "Sem2", "Sem3", "Sem4", "Sem6", "Sem7", "Sem8"],
-            "courses": {
-              "Sem1": ["Course1", "Course2", "Course3", "Course4"],
-              "Sem2": ["Course4", "Course5", "Course6"],
-                "Sem3": ["Course7", "Course8", "Course9"],
-                "Sem4": ["Course10", "Course11", "Course12"],
-                "Sem5": ["Course13", "Course14", "Course15"],
-                "Sem6": ["Course16", "Course17", "Course18"],
-                "Sem7": ["Course19", "Course20", "Course21"],
-                "Sem8": ["Course22", "Course23", "Course24"]
-    }
+          "subfaculties": ["Electrical", "Mechanical", "Civil", "Footwear", "Agriclture"],
+            "semesters":{
+                "Electrical": ["ESem1", "ESem2", "ESem3", "ESem4", "ESem5", "ESem6", "ESem7", "ESem8"],
+                "Mechanical": ["Sem1", "Sem2", "Sem3", "Sem4", "MSem5", "Sem6", "Sem7", "Sem8"],
+                "Civil": ["Sem1", "Sem2", "Sem3", "Sem4", "CSem5", "Sem6", "Sem7", "Sem8"],
+                "Footwear": ["Sem1", "Sem2", "Sem3", "FSem4", "Sem5", "Sem6", "Sem7", "Sem8"],
+                "Agriclture": ["Sem1", "Sem2", "Sem3", "ASem4", "Sem5", "Sem6", "Sem7", "Sem8"]
+            
+
+            },
+            "subbranch":{
+              "ESem5": ["Electrical1", "Electrical2", "Electrical3", "Electrical4"],
+              "MSem5": ["Mechanical1", "Mechanical2", "Mechanical3", "Mechanical4"],
+                "CSem5": ["Civil1", "Civil2", "Civil3", "Civil4"],
+                "FSem4": ["Footwear1", "Footwear2", "Footwear3", "Footwear4"],
+                "ASem4": ["Agriclture1", "Agriclture2", "Agriclture3", "Agriclture4"]
+              
+            }
 },
 "Faculty of Science": {
     "semesters": ["Sem1", "Sem2", "Sem3", "Sem4", "Sem5"],

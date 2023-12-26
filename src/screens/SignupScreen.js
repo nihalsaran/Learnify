@@ -36,7 +36,7 @@ const SignupScreen = () => {
   const [selectedFaculty, setSelectedFaculty] = useState('Select a faculty');
   const [selectedSubfaculty, setSelectedSubfaculty] = useState('Select a subfaculty');
   const [selectedSemester, setSelectedSemester] = useState('Select a semester');
-  const [selectedCourse, setSelectedCourse] = useState('Select a course');
+  const [selectedSubbranch, setSelectedSubbranch] = useState('Select a Subbranch');
 
   const { faculties } = facultiesData;
 
@@ -44,27 +44,27 @@ const SignupScreen = () => {
     setSelectedFaculty(value);
     setSelectedSubfaculty('Select a subfaculty'); // Reset subfaculty on faculty change
     setSelectedSemester('Select a semester'); // Reset semester on faculty change
-    setSelectedCourse('Select a course'); // Reset course on faculty change
+    setSelectedSubbranch('Select a Subbranch'); // Reset course on faculty change
   };
   const handleSubfacultySelect = (index, value) => {
     setSelectedSubfaculty(value);
     setSelectedSemester('Select a semester'); // Reset semester on subfaculty change
-    setSelectedCourse('Select a course'); // Reset course on subfaculty change
+    setSelectedSubbranch('Select a Subbranch'); // Reset course on subfaculty change
     
   };
   const handleSemesterSelect = (index, value) => {
     setSelectedSemester(value);
-    setSelectedCourse('Select a course'); // Reset course on semester change
+    setSelectedSubbranch('Select a Subbranch'); // Reset course on semester change
   };
 
-  const handleCourseSelect = (index, value) => {
+  const handleSubbranchSelect = (index, value) => {
     setSelectedCourse(value);
   };
 
   const selectedFacultyData = faculties[selectedFaculty] || {};
   const subfaculties = selectedFacultyData.subfaculties || [];
   const semesters = selectedFacultyData.semesters || [];
-  const courses = selectedFacultyData.courses || {};
+  const subbranch = selectedFacultyData.subbranch || {};
 
 
   const handleSignup = async () => {
@@ -92,7 +92,7 @@ const SignupScreen = () => {
         selectedFaculty, // Save selectedFaculty separately
         selectedSubfaculty, // Save selectedSubfaculty separately
         selectedSemester, // Save selectedSemester separately
-        selectedCourse, // Save selectedCourse separately
+        selectedSubbranch, // Save selectedCourse separately
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       });
 
@@ -186,7 +186,7 @@ const SignupScreen = () => {
 
       {selectedSubfaculty !== 'Select a subfaculty' && (
         <ModalDropdown
-        options={selectedFacultyData.semesters || []}
+        options={semesters[selectedSubfaculty] || []}
           defaultValue={selectedSemester}
           onSelect={handleSemesterSelect}
           style={styles.semesterDropdown}
@@ -199,9 +199,9 @@ const SignupScreen = () => {
 
       {selectedSemester !== 'Select a semester' && (
         <ModalDropdown
-        options={courses[selectedSemester] || []}
-          defaultValue={selectedCourse}
-          onSelect={handleCourseSelect}
+        options={subbranch[selectedSemester] || []}
+          defaultValue={selectedSubbranch}
+          onSelect={handleSubbranchSelect}
           style={styles.courseDropdown}
           textStyle={styles.dropdownText}
           dropdownStyle={styles.dropdownDropdown}
@@ -213,7 +213,7 @@ const SignupScreen = () => {
       <Text>Selected Faculty: {selectedFaculty}</Text> 
       <Text>Selected Subfaculty: {selectedSubfaculty}</Text>
       <Text>Selected Semester: {selectedSemester}</Text>
-      <Text>Selected Course: {selectedCourse}</Text>
+      <Text>Selected Subbranch: {selectedSubbranch}</Text>
 
 
 
@@ -293,6 +293,7 @@ const styles = StyleSheet.create({
   },
   dropdownText: {
     fontSize: 18,
+    
   },
   dropdownDropdown: {
     width: 370,
@@ -302,6 +303,7 @@ const styles = StyleSheet.create({
   },
   dropdownDropdownText: {
     fontSize: 18,
+    color: 'black',
   },
 });
 
