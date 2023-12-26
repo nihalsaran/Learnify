@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Materialpage from './screens/Materialpage';
-import Facultylist from './screens/Facultylist';
+
+import Profile from './screens/Profile';
 
 
 
@@ -15,14 +15,10 @@ const AppNavigator = () => {
        <NavigationContainer>
           <Stack.Navigator>
              
-          <Stack.Screen 
-          name="Materialpage" 
-          component={Materialpage} 
-          options={{headerShown: false}}
-          /> 
+          
            <Stack.Screen 
-          name="Facultylist" 
-          component={Facultylist} 
+          name="Profile" 
+          component={Profile} 
           options={{headerShown: false}}
           />
           
@@ -44,7 +40,9 @@ import Splash from './screens/Splash';
 import Login from './screens/Login';
 import Home from './screens/Home';
 import SignupScreen from './screens/SignupScreen';
-import Profile from './screens/Profile';
+import Materialpage from './screens/Materialpage';
+import Facultylist from './screens/Facultylist';
+
   
                 <Stack.Screen 
           name="Splash" 
@@ -74,6 +72,16 @@ import Profile from './screens/Profile';
           <Stack.Screen 
           name="Profile" 
           component={Profile} 
+          options={{headerShown: false}}
+          />
+          <Stack.Screen 
+          name="Materialpage" 
+          component={Materialpage} 
+          options={{headerShown: false}}
+          /> 
+           <Stack.Screen 
+          name="Facultylist" 
+          component={Facultylist} 
           options={{headerShown: false}}
           />
 */
