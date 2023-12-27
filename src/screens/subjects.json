@@ -12,7 +12,8 @@
       "ctPapers": "https://www.google.com",
       "notes": "https://www.google.com",
       "endSemPapers": "https://www.google.com",
-      "questionBank": "https://www.google.com"
+      "questionBank": "https://www.google.com",
+      "totalSubjects": 20
 
       
      
@@ -335,11 +336,11 @@
        
         "subjectCode": "STH102",
         "credits": 3,
-        "ctPapers": "https://www.google.com",
-        "notes": "https://www.google.com",
-        "endSemPapers": "https://www.google.com",
-        "questionBank": "https://www.google.com"
-  
+         "ctPapers": "https://www.google.com",
+      "notes": "https://www.google.com",
+      "endSemPapers": "https://www.google.com",
+      "questionBank": "https://www.google.com"
+
        
       }
   ]
