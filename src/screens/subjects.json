@@ -8,7 +8,12 @@
       "selectedSubbranch": "Select a Subbranch",
      
       "subjectCode": "CHM181",
-      "credits": 3
+      "credits": 3,
+      "ctPapers": "https://www.google.com",
+      "notes": "https://www.google.com",
+      "endSemPapers": "https://www.google.com",
+      "questionBank": "https://www.google.com"
+
       
      
     },
@@ -21,7 +26,13 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "CHM182",
-        "credits": 1
+        "credits": 1,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
+        
        
       },
       {
@@ -33,7 +44,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "PHM181",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
         
        
       },
@@ -46,7 +62,11 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "PHM182",
-        "credits": 1
+        "credits": 1,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
         
        
       },
@@ -59,7 +79,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "MEM101",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -71,7 +96,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "MEM102",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -83,7 +113,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "MEM104",
-        "credits": 1.5
+        "credits": 1.5,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -95,7 +130,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "MEM103",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -107,7 +147,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "MAM181",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -119,7 +164,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "GKC181",
-        "credits": 1
+        "credits": 1,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -131,7 +181,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "BBH101",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -143,7 +198,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "BBH102",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -155,7 +215,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "BOH181",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -167,7 +232,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "CEH181",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -179,7 +249,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "DBD101",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -191,7 +266,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "ECH181",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -203,7 +283,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "ENH181",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -215,7 +300,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "OMH101",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -227,7 +317,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "PYH102",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       },
       {
@@ -239,7 +334,12 @@
         "selectedSubbranch": "Select a Subbranch",
        
         "subjectCode": "STH102",
-        "credits": 3
+        "credits": 3,
+        "ctPapers": "https://www.google.com",
+        "notes": "https://www.google.com",
+        "endSemPapers": "https://www.google.com",
+        "questionBank": "https://www.google.com"
+  
        
       }
   ]

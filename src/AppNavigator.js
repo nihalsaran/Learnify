@@ -10,6 +10,7 @@ import Splash from './screens/Splash';
 import Login from './screens/Login';
 
 import Profile from './screens/Profile';
+import APL from './screens/APL';
 
 
 
@@ -62,6 +63,11 @@ const AppNavigator = () => {
           <Stack.Screen 
           name="Home" 
           component={Home} 
+          options={{headerShown: false}}
+          />
+           <Stack.Screen 
+          name="APL" 
+          component={APL} 
           options={{headerShown: false}}
           />
 

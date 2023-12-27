@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, Text, View, StyleSheet, Touchable, TouchableOpacity } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Subjects = () => {
   const [subjects, setSubjects] = useState([]);
   const [loggedInSemester, setLoggedInSemester] = useState('');
+  const Stack = createStackNavigator();
+
+  
 
   // Function to retrieve the current user's ID
   const getCurrentUserId = () => {
@@ -51,9 +56,11 @@ const Subjects = () => {
     fetchSubjects();
   }, []); // Run once on component mount
 
+  const navigation = useNavigation();
+
   const handlePress = (item) => {
-    // Handle press event with the item data
-    console.log('Pressed item:', item);
+    // Navigate to APL.js with the subject data when a card is pressed
+    navigation.navigate('APL', { subjectData: item });
   };
 
   const renderItem = ({ item }) => (
