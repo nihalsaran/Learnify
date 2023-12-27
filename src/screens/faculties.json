@@ -3,11 +3,11 @@
         "Faculty of Engineering": {
           "subfaculties": ["Fulltime-Electrical", "Fulltime-Mechanical", "Fulltime-Civil", "Fulltime-Footwear", "Fulltime-Agriclture", "Parttime-Electrical", "BVoc-RE", "BVoc-WS", "BVoc-AI", "BVoc-WM", "BVoc-Automobile", "BVoc-DM" ],
             "semesters":{
-                "Fulltime-Electrical": ["ESem1", "ESem2", "ESem3", "ESem4", "ESem5", "ESem6", "ESem7", "ESem8"],
-                "Fulltime-Mechanical": ["MSem1", "MSem2", "MSem3", "MSem4", "MSem5", "MSem6", "MSem7", "MSem8"],
-                "Fulltime-Civil": ["CSem1", "CSem2", "CSem3", "CSem4", "CSem5", "CSem6", "CSem7", "CSem8"],
-                "Fulltime-Footwear": ["FSem1", "FSem2", "FSem3", "FsSem4", "FSem5", "FSem6", "FSem7", "FSem8"],
-                "Fulltime-Agriclture": ["ASem1", "ASem2", "ASem3", "AsSem4", "ASem5", "ASem6", "ASem7", "ASem8"],
+                "Fulltime-Electrical": ["Sem1", "Sem2", "ESem3", "ESem4", "ESem5", "ESem6", "ESem7", "ESem8"],
+                "Fulltime-Mechanical": ["Sem1", "Sem2", "MSem3", "MSem4", "MSem5", "MSem6", "MSem7", "MSem8"],
+                "Fulltime-Civil": ["Sem1", "Sem2", "CSem3", "CSem4", "CSem5", "CSem6", "CSem7", "CSem8"],
+                "Fulltime-Footwear": ["Sem1", "Sem2", "FSem3", "FsSem4", "FSem5", "FSem6", "FSem7", "FSem8"],
+                "Fulltime-Agriclture": ["Sem1", "Sem2", "ASem3", "AsSem4", "ASem5", "ASem6", "ASem7", "ASem8"],
                 "Parttime-Electrical": ["PESem1", "PESem2", "PESem3", "PESem4", "PESem5", "PESem6", "PESem7", "PESem8"],
                 "BVoc-RE": ["RESem1", "RESem2", "RESem3", "RESem4", "RESem5", "RESem6", "RESem7", "RESem8"],
                 "BVoc-WS": ["WSSem1", "WSSem2", "WSSem3", "WSSem4", "WSSem5", "WSSem6", "WSSem7", "WSSem8"],
@@ -19,7 +19,7 @@
 
             },
             "subbranch":{
-              "ESem1": ["nil"],
+              "Sem1": ["nil"],
               "ESem2": ["nil"],
               "ESem3": ["nil"],
               "ESem4": ["nil"],
@@ -27,7 +27,7 @@
               "ESem6": ["nil"],
               "ESem7": ["nil"],
               "ESem8": ["nil"],
-              "MSem1": ["nil"],
+              
               "MSem2": ["nil"],
               "MSem3": ["nil"],
               "MSem4": ["nil"],
@@ -35,7 +35,7 @@
               "MSem6": ["nil"],
               "MSem7": ["nil"],
               "MSem8": ["nil"],
-              "CSem1": ["nil"],
+              
               "CSem2": ["nil"],
               "CSem3": ["nil"],
               "CSem4": ["nil"],
@@ -43,7 +43,7 @@
               "CSem6": ["nil"],
               "CSem7": ["nil"],
               "CSem8": ["nil"],
-              "FSem1": ["nil"],
+              
               "FSem2": ["nil"],
               "FSem3": ["nil"],
               "FsSem4": ["nil"],
@@ -51,7 +51,7 @@
               "FSem6": ["nil"],
               "FSem7": ["nil"],
               "FSem8": ["nil"],
-              "ASem1": ["nil"],
+              
               "ASem2": ["nil"],
               "ASem3": ["nil"],
               "AsSem4": ["nil"],
