@@ -85,11 +85,7 @@ const Subjects = () => {
   );
 };
 const styles = StyleSheet.create({
- /*container: {
-    padding: 20,
-    backgroundColor: '#ffffff',
-    height: 1000,
-  },*/
+ 
   TouchableOpacity: {
     flex: 1, // Expand TouchableOpacity to fill its parent (FlatList item)
   },

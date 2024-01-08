@@ -9,17 +9,29 @@ import auth from '@react-native-firebase/auth';
 const Login = () => {
   const navigation = useNavigation();
 
-  const [email, setEmail] = useState('');
+  const [rollNumber, setRollNumber] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleLogin = async () => {
-    try {
-      await auth().signInWithEmailAndPassword(email, password);
-      navigation.navigate('Home');
-      console.log('Login successful!');
-    } catch (error) {
-      console.error('Login error:', error.message);
-    }
+  const handleLogin = () => {
+    // Send login data to backend
+    fetch('http://localhost:3000/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ rollNumber, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.message === 'Login successful') {
+          navigation.navigate('Home'); // Navigate to Home.js
+        }
+        // Handle other cases or display error message
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle error
+      });
   };
   
   const Card = ({ children }) => {
@@ -71,9 +83,9 @@ const Login = () => {
     return (
       <TextInput
         style={styles.Input}
-        placeholder="Email"
-        value={email}
-        onChangeText={(text) => setEmail(text)}
+        placeholder="Roll Number"
+        value={rollNumber}
+        onChangeText={(text) => setRollNumber(text)}
       />
     );
   };

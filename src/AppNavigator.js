@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Login from './screens/Login';
+
 import Materialpage from './screens/Materialpage';
 import Home from './screens/Home';
 import Facultylist from './screens/Facultylist';
 import SignupScreen from './screens/SignupScreen';
 import Welcome from './screens/Welcome';
 import Splash from './screens/Splash';
-import Login from './screens/Login';
+
 
 import Profile from './screens/Profile';
 import APL from './screens/APL';
@@ -33,11 +35,7 @@ const AppNavigator = () => {
           component={Welcome} 
           options={{headerShown: false}}
           />
-          <Stack.Screen 
-          name="Login" 
-          component={Login} 
-          options={{headerShown: false}}
-          />
+          
           <Stack.Screen 
           name="Signup" 
           component={SignupScreen} 
@@ -71,6 +69,19 @@ const AppNavigator = () => {
           options={{headerShown: false}}
           />
 
+
+          <Stack.Screen 
+          name="Login" 
+          component={Login} 
+          options={{headerShown: false}}
+          />
+
+          
+          
+
+
+
+
              
           
            
@@ -88,6 +99,7 @@ const AppNavigator = () => {
 export default AppNavigator;
  
 /*
+
 
 
 

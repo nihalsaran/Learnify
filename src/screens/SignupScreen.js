@@ -67,48 +67,34 @@ const SignupScreen = () => {
   const subbranch = selectedFacultyData.subbranch || {};
 
 
-  const handleSignup = async () => {
-    if (!email || !password || !confirmPassword) {
-      Alert.alert('Please fill all the fields!');
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      Alert.alert('Password do not match!');
-      return;
-    }
-
-    try {
-      const auth = firebase.auth();
-      const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-
-      // Add user data to Firestore (optional)
-      await firestore().collection('users').doc(userCredential.user.uid).set({
+  const handleSignup = () => {
+    // Send signup data to backend
+    fetch('http://localhost:3000/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         email,
+        password,
         rollNumber,
+        phoneNumber,
         name,
-        password, 
-        phoneNumber, 
-        selectedFaculty, // Save selectedFaculty separately
-        selectedSubfaculty, // Save selectedSubfaculty separately
-        selectedSemester, // Save selectedSemester separately
-        selectedSubbranch, // Save selectedCourse separately
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        selectedFaculty,
+        selectedSubfaculty,
+        selectedSemester,
+        selectedSubbranch,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // Handle success or display error message
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle error
       });
-
-      Alert.alert('Success', 'Signed up successfully!');
-      // Navigate to another screen
-
-      // Navigate to EmailOtpVerification screen with email as a prop
-      navigation.navigate('Home');
-    } catch (error) {
-      console.error('Signup Error:', error);
-      Alert.alert('Error', 'Signup error. Please try again later.');
-    }
-
-
-
-
   };
 
 
